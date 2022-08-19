@@ -4,8 +4,8 @@
 cls
 
 rem Set variables
-set KRATOS_SOURCE=~0,-1%/..
-set KRATOS_BUILD=%KRATOS_SOURCE%/build
+if not defined KRATOS_SOURCE set KRATOS_SOURCE=%~dp0..
+if not defined KRATOS_BUILD set KRATOS_BUILD=%KRATOS_SOURCE%/build
 
 rem Set basic configuration
 if not defined KRATOS_BUILD_TYPE set KRATOS_BUILD_TYPE=Release
