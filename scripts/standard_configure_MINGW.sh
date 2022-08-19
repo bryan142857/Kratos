@@ -16,8 +16,8 @@ add_app () {
 }
 
 # Set compiler
-export CC=${CC:-clang}
-export CXX=${CXX:-clang++}
+export CC=gcc
+export CXX=g++
 
 # Set variables
 export KRATOS_SOURCE="kratos_folder/Kratos"

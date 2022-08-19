@@ -16,8 +16,8 @@ add_app () {
 }
 
 # Set compiler
-export CC=${CC:-gcc}
-export CXX=${CXX:-g++}
+export CC=gcc
+export CXX=g++
 
 # Set variables
 export KRATOS_SOURCE="${KRATOS_SOURCE:-"$( cd "$(dirname "$0")" ; pwd -P )"/..}"
