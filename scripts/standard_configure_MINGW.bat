@@ -16,4 +16,4 @@ del /F /Q "%KRATOS_BUILD%\%KRATOS_BUILD_TYPE%\cmake_install.cmake"
 del /F /Q "%KRATOS_BUILD%\%KRATOS_BUILD_TYPE%\CMakeCache.txt"
 del /F /Q "%KRATOS_BUILD%\%KRATOS_BUILD_TYPE%\CMakeFiles"
 
-location_msys64\msys64\usr\bin\sh.exe configure.sh
+location_msys64\msys64\usr\bin\sh.exe %KRATOS_BUILD%\configure.sh
