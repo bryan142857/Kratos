@@ -1,23 +1,32 @@
 # Contents
-* [Cloning Kratos](#cloning-kratos)
-* [Kratos Dependencies](#kratos-dependencies)
-  * [Kratos Core Dependencies](#kratos-core-dependencies)
-    * [Linux Installation](#linux-installation)
-    * [Windows Installation](#windows-installation)
-  * [Specific Application Dependencies](#specific-application-dependencies)
-* [Basic Configuration](#basic-configuration)
-* [Examples](#configuration-scripts-examples)
-  * [Linux](#linux)
-  * [Windows](#windows)
-  * [MacOS](#macos)
-* [Adding Applications](#adding-applications)
-* [Post Compilation](#post-compilation)
-* [Advanced Configuration](#advanced-configuration)
-  * [Building Environment](#building-environment)
-  * [Common Flags](#common-flags)
-  * [Unitary Builds](#unitary-builds)
-  * [MPI-Parallelism](#parallelism)
-  * [TPL Libraries](#tpl-libraries)
+- [Contents](#contents)
+  - [Cloning Kratos](#cloning-kratos)
+  - [Kratos Dependencies](#kratos-dependencies)
+    - [Kratos Core Dependencies](#kratos-core-dependencies)
+    - [Specific Application Dependencies](#specific-application-dependencies)
+  - [Basic Configuration](#basic-configuration)
+  - [Configuration scripts examples](#configuration-scripts-examples)
+    - [Linux](#linux)
+    - [Windows](#windows)
+      - [Windows Visual Studio compilation configuration](#windows-visual-studio-compilation-configuration)
+    - [MacOS](#macos)
+  - [Adding Applications](#adding-applications)
+  - [Post Compilation](#post-compilation)
+    - [Linux](#linux-1)
+    - [Windows](#windows-1)
+  - [Advanced Configuration](#advanced-configuration)
+    - [Compilation of Kratos in parallel](#compilation-of-kratos-in-parallel)
+      - [Linux](#linux-2)
+      - [Windows](#windows-2)
+      - [MacOS](#macos-1)
+    - [Building Environment](#building-environment)
+    - [Common Flags](#common-flags)
+    - [Unitary Builds](#unitary-builds)
+    - [Parallelism](#parallelism)
+    - [Logging](#logging)
+    - [TPL-Libraries](#tpl-libraries)
+      - [Tetgen](#tetgen)
+      - [Triangle](#triangle)
 
 ## Cloning Kratos
 
@@ -30,7 +39,6 @@ sudo apt-get install git
 In Windows, you can download it in:
 
 * [Download Git](https://git-scm.com/downloads)
-
 
 
 Once git is installed you can fetch the code by using this command in a terminal:
@@ -63,39 +71,44 @@ Additionaly, Visual Studio is required to compile in Windows.
 
 - #### Windows installation
 
-    - Visual Studio
+  - #####  Microsoft Visual Studio compiler
 
-        *Visual Studio* is the only compiler officially supported to build *Kratos* under *Windows*. The minimium required version is Visual Studio 2017, but we recommend to use Visual Studio 2019 or higher.
+      - Visual Studio
 
-        * [Download Visual Studio](https://visualstudio.microsoft.com/en/thank-you-downloading-visual-studio/?sku=Community&rel=16)
+          *Visual Studio* is the only compiler officially supported to build *Kratos* under *Windows*. The minimium required version is Visual Studio 2017, but we recommend to use Visual Studio 2019 or higher.
 
-        Since *Visual Studio* is a multi-language IDE, some distributions come without C++ compiler. Please, make sure that you can create a C++ project before continuing, in case C++ packages were missing you will be prompt to download them. You can install the **Desktop development with C++** workload with the Visual Studio Installer to acquire all necessary depencencies to compile C++ projects.
+          * [Download Visual Studio](https://visualstudio.microsoft.com/en/thank-you-downloading-visual-studio/?sku=Community&rel=16)
 
-        When compiling Kratos in Windows, please take into consideration the [Windows Visual Studio compilation configuration](#Windows-Visual-Studio-compilation-configuration).
+          Since *Visual Studio* is a multi-language IDE, some distributions come without C++ compiler. Please, make sure that you can create a C++ project before continuing, in case C++ packages were missing you will be prompt to download them. You can install the **Desktop development with C++** workload with the Visual Studio Installer to acquire all necessary depencencies to compile C++ projects.
 
-    - CMake
-        * [Download CMake](http://cmake.org/download/)
+          When compiling Kratos in Windows, please take into consideration the [Windows Visual Studio compilation configuration](#Windows-Visual-Studio-compilation-configuration).
 
-        Once installing, please **do not forget to mark the option: '''"Add CMake to the system PATH for all users"'''**
+      - CMake
+          * [Download CMake](http://cmake.org/download/)
 
-        Minimum required version: CMake 3.14
+          Once installing, please **do not forget to mark the option: '''"Add CMake to the system PATH for all users"'''**
 
-    - Python
+          Minimum required version: CMake 3.14
 
-        You will need at least *Python* 3.5 (recommended 3.7/3.8) in your computer in order to compile *Kratos*. You can download python from its official webpage:
+      - Python
 
-        * [Download Python](http://www.python.org/downloads/)
+          You will need at least *Python* 3.5 (recommended 3.7/3.8) in your computer in order to compile *Kratos*. You can download python from its official webpage:
 
-        Please, take special care to download a installer that suits your desired architecture **x86 for 32 bits**  compilations and **x86_64 for 64 bits**  compilations. Otherwise it won't work.
+          * [Download Python](http://www.python.org/downloads/)
 
-    - Boost
+          Please, take special care to download a installer that suits your desired architecture **x86 for 32 bits**  compilations and **x86_64 for 64 bits**  compilations. Otherwise it won't work.
 
-        The next step will consist in obtain Boost. *Kratos Multiphysics* needs *Boost* libraries to support some of its functions. You can use any version from `version 1.67` onward.
+      - Boost
 
-        * [Download Boost](http://www.boost.org/users/download/)
+          The next step will consist in obtain Boost. *Kratos Multiphysics* needs *Boost* libraries to support some of its functions. You can use any version from `version 1.67` onward.
 
-        Extract boost, and note the path as it will be needed in the configure stage to set the environmental variable `BOOST_ROOT`.
+          * [Download Boost](http://www.boost.org/users/download/)
 
+          Extract boost, and note the path as it will be needed in the configure stage to set the environmental variable `BOOST_ROOT`.
+
+  - #####  MinGW
+  
+    **TODO**
 
 ### Specific Application Dependencies
 
