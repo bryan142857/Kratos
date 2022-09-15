@@ -55,6 +55,7 @@ namespace Kratos
  * @ingroup KratosCore
  * @brief Various mathematical utilitiy functions
  * @details Various mathematical utilitiy functions. Defines several utility functions.
+ * @todo More methods can be moved to cpp if the inline is removed (analysis of need required)
  * @author Riccardo Rossi
  * @author Pooyan Dadvand
  */
