@@ -157,7 +157,6 @@ Additionaly, Visual Studio is required to compile in Windows.
         ```Shell
         pacman -S mingw64/mingw-w64-x86_64-boost
         ```
-    **TODO**
 
 ### Specific Application Dependencies
 
@@ -165,7 +164,7 @@ Some applications have additional dependencies. Please check the `README` files 
 
 ## Basic Configuration
 
-You can find the new kratos configuration file in Kratos `scripts` folder: `standard_configure.sh` for linux, `standard_configure_max.sh` for MacOS, `standard_configure.bat` for win and others.
+You can find the new kratos configuration file in Kratos `scripts` folder: `standard_configure.sh` for linux, `standard_configure_max.sh` for MacOS, `standard_configure.bat` for win and others. **TODO**
 
 Out of the box Kratos will try to find all necessary libraries in your system automatically, but we recommend you to copy these scripts and modify it according to your preferences. Please take a look at the following configuration options:
 
@@ -322,9 +321,6 @@ If you have a 64-bit system, you might need to also specify it in the configure 
 cmake -G"Visual Studio 15 2017" -A x64 -H"%KRATOS_SOURCE%" -B"%KRATOS_BUILD%\%KRATOS_BUILD_TYPE%"  ^
 -DUSE_EIGEN_MKL=OFF
 ```
-
-
-
 
 ### MacOS
 
@@ -510,7 +506,6 @@ Path where your applications are located. This variable is not necessary but it 
 Controls wether the python files are installed by making copies or creating symlinks to the files in the source directory. This options is specially usefull if you are developing python files and don't want to reinstall every time you touch a script.
 
 Using this option in windows requires elevated privileges (you must run the script as admin)
-
 
 ### Common Flags
 
