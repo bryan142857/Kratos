@@ -15,7 +15,7 @@ add_app () {
     export KRATOS_APPLICATIONS="${KRATOS_APPLICATIONS}$1;"
 }
 
-# Set compiler
+# Set compiler #NOTE: Currently only GCC is supported, linking error on recent versions of Clang/LLVM, see https://github.com/llvm/llvm-project/issues/53433
 export CC=${CC:-gcc}
 export CXX=${CXX:-g++}
 
