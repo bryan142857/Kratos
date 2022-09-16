@@ -92,7 +92,7 @@ Additionaly, Visual Studio is required to compile in Windows.
 
       - Python
 
-          You will need at least *Python* 3.5 (recommended 3.7/3.8) in your computer in order to compile *Kratos*. You can download python from its official webpage:
+          You will need at least *Python* 3.7 (recommended 3.8/3.9/3.10) in your computer in order to compile *Kratos*. You can download python from its official webpage:
 
           * [Download Python](http://www.python.org/downloads/)
 
@@ -130,7 +130,22 @@ Additionaly, Visual Studio is required to compile in Windows.
         ```Shell
         git clone https://github.com/KratosMultiphysics/Kratos Kratos
         ```
-        
+    - Dev Packages
+
+        You will need a series of packages with some *Kratos* dependencies. The command below will install all the packages needed.
+
+        ```Shell
+        pacman -S mingw64/mingw-w64-x86_64-lapack mingw64/mingw-w64-x86_64-openblas mingw64/mingw-w64-x86_64-cmake mingw64/mingw-w64-x86_64-clang mingw64/mingw-w64-x86_64-gcc mingw64/mingw-w64-x86_64-gcc-fortran mingw-w64-x86_64-make mingw64/mingw-w64-x86_64-openmp mingw64/mingw-w64-x86_64-dlfcn
+        ```
+
+    - Python 
+        You will need at least *Python* 3.7 (recommended 3.8/3.9/3.10) in your computer in order to compile *Kratos*. You can download python from its official webpage:
+
+        * [Download Python](http://www.python.org/downloads/)
+
+        Please, take special care to download a installer that suits your desired architecture **x86 for 32 bits**  compilations and **x86_64 for 64 bits**  compilations. Otherwise it won't work.
+
+        Unfortunately, we cannot use right now *MSYS2* directly, as the development files are not available (`python3-dev` equivalent to *GNU/Linux*).
     **TODO**
 
 ### Specific Application Dependencies
