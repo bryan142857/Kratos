@@ -107,7 +107,30 @@ Additionaly, Visual Studio is required to compile in Windows.
           Extract boost, and note the path as it will be needed in the configure stage to set the environmental variable `BOOST_ROOT`.
 
   - #####  MinGW
-  
+
+    *MinGW* means minimal GNU for *Windows*. There are different manners of installing, the simplest one iusisn *MSYS2*.
+
+    - MSYS2
+
+        First we download *MSYS2* in the following [link](https://www.msys2.org/). This will install *MinGW*, which allows to easiy install packages *a la* Arch-Linux (Pacman package manager). We install it, and with it the first thing we do is to update as follows (in the *MSYS2* bash):
+
+        ```Shell
+        pacman -Syu
+        ```
+    - Git
+
+        The first thing you will need is the *Kratos* Multiphysics source code. To download the code you will have to use a git. You can install the default git by using this command:
+
+        ```Shell
+        pacman -S git
+        ```
+
+        Once git is installed you can fetch the code by using these commands:
+
+        ```Shell
+        git clone https://github.com/KratosMultiphysics/Kratos Kratos
+        ```
+        
     **TODO**
 
 ### Specific Application Dependencies
